@@ -1,0 +1,10 @@
+[Unit]
+Description=Runs runpi at boot
+After=multi-user.target
+ 
+[Service]
+Type=simple
+ExecStart=/root/runpi/runpi.py
+ 
+[Install]
+WantedBy=multi-user.target
