@@ -26,6 +26,7 @@
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import sys
+import os
 import pylcd
 import datetime
 sys.path.append('/root/garmin-activities')
@@ -39,7 +40,9 @@ class runpi:
         """Parse a very simple config file with 2 lines. The first is a Garmin
         Connect username and the second is a Garmin Connect password."""
 
-        cfg_file = 'config'
+        # Get current working directory
+        pwd = os.path.dirname(__file__)
+        cfg_file = '{0}/config'.format(pwd)
         lines = []
 
         try:
