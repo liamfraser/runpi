@@ -129,7 +129,7 @@ class runpi:
                                              latest.short_unit))
 
         self._display.set_cursor_position(line = 1, column = 0)
-        self._display.write("{0}:{1}:{2}".format(latest.duration.hour,
+        self._display.write("{0}:{1:0>2}:{2}".format(latest.duration.hour,
                                                  latest.duration.minute,
                                                  latest.duration.second))
 
@@ -173,7 +173,7 @@ class runpi:
                                              week[0].short_unit))
 
         self._display.set_cursor_position(line = 3, column = 0)
-        self._display.write("{0}:{1}:{2}".format(hours,
+        self._display.write("{0}:{1:0>2}:{2}".format(hours,
                                                  minutes,
                                                  seconds))
 
