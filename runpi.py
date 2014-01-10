@@ -153,13 +153,15 @@ class runpi:
 
         # Running totals
         distance = 0
+        pace_distance = 0
         duration_seconds = 0
 
         for a in week:
             duration_seconds += a.duration_seconds
+            pace_distance += a.distance
             distance += a.distance_short
         
-        pace = garmin.activity.pace_calculator(duration_seconds, distance)
+        pace = garmin.activity.pace_calculator(duration_seconds, pace_distance)
 
         # Convert seconds into hours, minutes and seconds
         hours = int(duration_seconds / 60 / 60)
